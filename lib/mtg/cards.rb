@@ -17,3 +17,4 @@ class MTG::Cards
   def self.all
     @@all
   end
+end
