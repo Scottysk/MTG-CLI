@@ -5,7 +5,7 @@ class MTG::API
   
   
   def self.query_cards_db(query)
-    results = RestClient.get("https://api.magicthegathering.io/v1/cards")
+    results = RestClient.get("https://api.magicthegathering.io/v1/#{query}")
     
     json = JSON.parse(results)
     binding.pry
