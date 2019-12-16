@@ -1,4 +1,6 @@
-require 'httparty'
+require 'rest-client'
+require 'pry'
+require 'json'
 require 'mtg_sdk'
 
 
