@@ -1,11 +1,11 @@
 require 'pry'
 class MTG::API
   
-  BASE_URL = "https://api.magicthegathering.io/v1/cards"
+  BASE_URL = "https://api.magicthegathering.io/v1/cards?name="
   
   
   def self.query_cards_db(query)
-    results = RestClient.get("https://api.magicthegathering.io/v1/cards")
+    results = RestClient.get("#{BASE_URL}#{query}")
     
     json = JSON.parse(results)
     binding.pry
