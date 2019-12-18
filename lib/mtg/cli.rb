@@ -9,7 +9,7 @@ class MTG::Cli
   end
   
   def menu
-    puts "Type 'list' to see a list of 100 Magic the Gathering cards or type 'exit' to close the program."
+    puts "Type 'list' to see an example list of Magic the Gathering cards or type 'exit' to close the program."
     
     input = gets.strip
     
@@ -27,7 +27,7 @@ class MTG::Cli
   end
   
   def list_cards
-    MTG::API.query_cards_db(query)
+    MTG::API.query_cards_db(query = nil)
     MTG::Cards.all.each.with_index(1) do |c, i|
       puts "#{i}. #{c.name}."
   end
