@@ -1,7 +1,9 @@
 class MTG::Cli
   
   def call
-    puts "Hello, welcome to the MTG program!"
+    puts "----------------------------------"
+    puts "Hello, welcome to the Magic the Gathering card program!"
+    puts "----------------------------------"
     menu
   end
   

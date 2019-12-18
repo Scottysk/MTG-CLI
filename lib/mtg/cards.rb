@@ -1,6 +1,6 @@
 class MTG::Cards
   
-  attr_accessor :name, :manaCost, :rarity, :type, :setName, :text, :artist
+  attr_accessor :name, :manaCost, :rarity, :type, :types, :colorIdentity, :setName, :text, :artist, :number, :multiverseid
   @@all = []
   
   def initialize(args)
