@@ -27,16 +27,16 @@ class MTG::Cli
     card = MTG::Cards.all[input.to_i - 1]
     MTG::API.single_card(card)
     
-    puts "Name: #{cards.name}"
-    puts "Mana Cost: #{cards.manaCost}"
-    puts "Rarity: #{cards.rarity}"
-    puts "Type: #{cards.type}"
-    puts "Types: #{cards.types}"
-    puts "Color Identity: #{cards.colorIdentity}"
-    puts "Set Name: #{cards.setName}"
-    puts "Artist: #{cards.artist}"
-    puts "Number: #{cards.number}"
-    puts "Multiverse ID: #{cards.multiverseid}"
+    puts "Name: #{card.name}"
+    puts "Mana Cost: #{card.manaCost}"
+    puts "Rarity: #{card.rarity}"
+    puts "Type: #{card.type}"
+    puts "Types: #{card.types}"
+    puts "Color Identity: #{card.colorIdentity}"
+    puts "Set Name: #{card.setName}"
+    puts "Artist: #{card.artist}"
+    puts "Number: #{card.number}"
+    puts "Multiverse ID: #{card.multiverseid}"
 
     
     
