@@ -5,7 +5,6 @@ class MTG::Cli
     puts "Hello, welcome to the Magic the Gathering card program!"
     puts "-------------------------------------------------------"
     menu
-    list_cards
   end
   
   def menu
@@ -14,24 +13,19 @@ class MTG::Cli
     input = gets.strip
     
     if input == "list"
-      list_cards
       
-    else input == "exit"
-      puts "Closing the program."
-  end
-    
-    
-#    puts "What card would you like to look for?"
-#    input = gets.strip
-#    MTG::API.query_cards_db(input)
-  end
-  
-  def list_cards
-    MTG::API.query_cards_db(query = nil)
+    MTG::API.query_cards_db(input)
     MTG::Cards.all.each.with_index(1) do |c, i|
       puts "#{i}. #{c.name}."
+    end
+    
+    
+    else input == "exit"
+      puts "Closing program."
+    end
   end
-end
+  
+
 
      
 end

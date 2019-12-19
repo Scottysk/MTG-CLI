@@ -14,7 +14,6 @@ class MTG::API
       MTG::Cards.new(card_hash)
       
     end
-
   end
 
   
