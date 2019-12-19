@@ -23,6 +23,15 @@ class MTG::Cli
     end
     
     puts "Which card would you like more information on?"
+    
+    card_info
+
+    else input == "exit"
+      puts "Closing program."
+    end
+  end
+  
+  def card_info
     input = gets.strip
     
     card = MTG::Cards.all[input.to_i - 1]
@@ -40,13 +49,7 @@ class MTG::Cli
     puts "Multiverse ID: #{card.multiverseid}"
     puts "Card Artist: #{card.artist}"
     puts "Card Text: #{card.text}"
-
     
-    
-    
-    else input == "exit"
-      puts "Closing program."
-    end
   end
   
 

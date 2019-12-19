@@ -1,4 +1,3 @@
-require 'pry'
 class MTG::API
   
   BASE_URL = "https://api.magicthegathering.io/v1/cards"
@@ -6,7 +5,7 @@ class MTG::API
   
   def self.query_cards_db(query)
     
-    results = RestClient.get("https://api.magicthegathering.io/v1/cards")
+    results = RestClient.get("#{BASE_URL}")
     
     
     json = JSON.parse(results)
