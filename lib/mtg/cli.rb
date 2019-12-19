@@ -9,11 +9,10 @@ class MTG::Cli
   
   def menu
     puts "Type 'list' to see a list of Magic the Gathering cards or type 'exit' to close the program."
-    puts "--------------------------------------------------------------------------------"
     
     input = gets.strip
     
-    if input == "list"
+    if input.include? "list"
       
     puts "Retrieving cards..."
     
@@ -26,18 +25,19 @@ class MTG::Cli
     
     card_info
 
-    else input == "exit"
-      puts "Closing program."
+    else input.include? "exit"
+      goodbye
     end
   end
   
   def card_info
     input = gets.strip
     
+    
     card = MTG::Cards.all[input.to_i - 1]
     MTG::API.single_card(card)
     
-    puts "Name: #{card.name}"
+    puts "Card Name: #{card.name}"
     puts "Mana Cost: #{card.manaCost}"
     puts "Rarity: #{card.rarity}"
     puts "Type: #{card.type}"
@@ -49,7 +49,13 @@ class MTG::Cli
     puts "Multiverse ID: #{card.multiverseid}"
     puts "Card Artist: #{card.artist}"
     puts "Card Text: #{card.text}"
+    menu
     
+  end
+  
+  def goodbye
+    puts "See you next time!"
+    sleep 1
   end
   
 
