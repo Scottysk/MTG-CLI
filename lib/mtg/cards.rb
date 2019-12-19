@@ -4,11 +4,15 @@ class MTG::Cards
   @@all = []
   
   def initialize(args)
-    args.each do |k, v|
-      self.send("#{k}=", v) if self.respond_to?(k)
-      end
+      updated_cards(args)
       @@all << self
   end
+  
+  def updated_cards(args)
+    args.each do |k, v|
+      self.send("#{k}=", v) if self.respond_to?(k)
+     end
+   end
   
   def self.all
     @@all
