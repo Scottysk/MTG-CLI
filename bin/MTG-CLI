@@ -2,5 +2,7 @@
 
 
 require './lib/environment'
+require 'bundler/setup'
+require "MTG-CLI'
 
 MTG::Cli.new.call

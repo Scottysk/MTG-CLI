@@ -4,6 +4,7 @@ class MTG::Cli
     puts "-------------------------------------------------------"
     puts "Hello, welcome to the Magic the Gathering card program!"
     puts "-------------------------------------------------------"
+    puts ""
     menu
   end
   
@@ -49,6 +50,7 @@ class MTG::Cli
     puts "Multiverse ID: #{card.multiverseid}"
     puts "Card Artist: #{card.artist}"
     puts "Card Text: #{card.text}"
+    puts ""
     menu
     
   end
@@ -57,8 +59,4 @@ class MTG::Cli
     puts "See you next time!"
     sleep 1
   end
-  
-
-
-     
 end
