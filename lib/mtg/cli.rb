@@ -8,7 +8,8 @@ class MTG::Cli
   end
   
   def menu
-    puts "Type 'list' to see an example list of Magic the Gathering cards or type 'exit' to close the program."
+    puts "Type 'list' to see a list of Magic the Gathering cards or type 'exit' to close the program."
+    puts "--------------------------------------------------------------------------------"
     
     input = gets.strip
     
@@ -21,7 +22,7 @@ class MTG::Cli
       puts "#{i}. #{c.name}."
     end
     
-    puts "Which card would you like to search for?"
+    puts "Which card would you like more information on?"
     input = gets.strip
     
     card = MTG::Cards.all[input.to_i - 1]
