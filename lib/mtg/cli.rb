@@ -38,6 +38,8 @@ class MTG::Cli
     puts "Artist: #{card.artist}"
     puts "Number: #{card.number}"
     puts "Multiverse ID: #{card.multiverseid}"
+    puts "Card Artist: #{card.artist}"
+    puts "Card Text: #{card.text}"
 
     
     
