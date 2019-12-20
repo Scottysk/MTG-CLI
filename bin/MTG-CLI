@@ -3,6 +3,6 @@
 
 require './lib/environment'
 require 'bundler/setup'
-require 'mtg'
+
 
 MTG::Cli.new.call

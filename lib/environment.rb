@@ -1,7 +1,5 @@
 require 'rest-client'
-require 'pry'
 require 'json'
-require 'mtg_sdk'
 
 
 require_relative "./mtg/version"

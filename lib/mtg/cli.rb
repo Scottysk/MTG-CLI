@@ -56,6 +56,7 @@ class MTG::Cli
   end
   
   def goodbye
+    puts ""
     puts "See you next time!"
     sleep 1
   end
