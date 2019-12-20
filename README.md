@@ -1,8 +1,6 @@
-# MTG::CLI
+# The Magic the Gathering card program!
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/MTG/CLI`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem's CLI will let you retrieve a list of Magic the Gathering cards and give you more information about them depending on which card you choose.
 
 ## Installation
 
