@@ -15,16 +15,20 @@ class MTG::Cli
     
     if input.include? "list"
       
-    puts "Retrieving cards..."
-    
-    MTG::API.query_cards_db(input)
-    MTG::Cards.all.each.with_index(1) do |c, i|
-      puts "#{i}. #{c.name}."
-    end
-    
-    puts "Which card would you like more information on?"
-    
-    card_info
+      puts "Retrieving cards..."
+      
+      if MTG::Cards.all.empty?
+        MTG::API.query_cards_db(input)
+      end
+      
+      
+      MTG::Cards.all.each.with_index(1) do |c, i|
+        puts "#{i}. #{c.name}."
+      end
+      
+      puts "Which card would you like more information on?"
+      
+      card_info
 
     else input.include? "exit"
       goodbye
@@ -34,24 +38,31 @@ class MTG::Cli
   def card_info
     input = gets.strip
     
+    if !input.to_i.between?(1, MTG::Cards.all.size)
+      puts "That won't work, try a number."
+      card_info
+
+     else
     
-    card = MTG::Cards.all[input.to_i - 1]
-    MTG::API.single_card(card)
-    
-    puts "Card Name: #{card.name}"
-    puts "Mana Cost: #{card.manaCost}"
-    puts "Rarity: #{card.rarity}"
-    puts "Type: #{card.type}"
-    puts "Types: #{card.types}"
-    puts "Color Identity: #{card.colorIdentity}"
-    puts "Set Name: #{card.setName}"
-    puts "Artist: #{card.artist}"
-    puts "Number: #{card.number}"
-    puts "Multiverse ID: #{card.multiverseid}"
-    puts "Card Artist: #{card.artist}"
-    puts "Card Text: #{card.text}"
-    puts ""
-    menu
+      card = MTG::Cards.all[input.to_i - 1]
+      
+      
+      puts "Card Name: #{card.name}"
+      puts "Mana Cost: #{card.manaCost}"
+      puts "Rarity: #{card.rarity}"
+      puts "Type: #{card.type}"
+      puts "Types: #{card.types}"
+      puts "Color Identity: #{card.colorIdentity}"
+      puts "Set Name: #{card.setName}"
+      puts "Artist: #{card.artist}"
+      puts "Number: #{card.number}"
+      puts "Multiverse ID: #{card.multiverseid}"
+      puts "Card Artist: #{card.artist}"
+      puts "Card Text: #{card.text}"
+      puts "Flavor Text: #{card.flavor}"
+      puts ""
+      menu
+    end
     
   end
   

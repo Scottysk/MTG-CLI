@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
 
 
-require './lib/environment'
+require_relative '../lib/environment'
 require 'bundler/setup'
+
+
 
 
 MTG::Cli.new.call

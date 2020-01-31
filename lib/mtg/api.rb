@@ -15,13 +15,14 @@ class MTG::API
     end
   end
   
-  def self.single_card(cards)
+  def self.single_card(card)
     
     results = RestClient.get("#{BASE_URL}?name=#{:id}")
     
+
     
     json = JSON.parse(results)
-    cards.updated_cards(json)
+    card.update_card(json)
       
 
   end
